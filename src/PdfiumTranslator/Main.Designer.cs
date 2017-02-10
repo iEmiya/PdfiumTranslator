@@ -32,52 +32,53 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnViewZoomToFit = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnFitWidth = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnFitHeight = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnRuler = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnPageToText = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnToolTranslatePage = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnToolsTranlateDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.pdfViewer = new PdfiumViewer.PdfViewer();
             this.tbSourceText = new System.Windows.Forms.TextBox();
             this.tsSourceText = new System.Windows.Forms.ToolStrip();
-            this.btnSourceSelectTextToLower = new System.Windows.Forms.ToolStripButton();
-            this.btnSourceSelectTextCommentOut = new System.Windows.Forms.ToolStripButton();
             this.tabTargetText = new System.Windows.Forms.TabControl();
             this.tpTargetText = new System.Windows.Forms.TabPage();
             this.tbTargetText = new System.Windows.Forms.TextBox();
             this.tsTargetText = new System.Windows.Forms.ToolStrip();
-            this.btnTargetSelectTextToBold = new System.Windows.Forms.ToolStripButton();
-            this.btnTargetSelectTextToItalic = new System.Windows.Forms.ToolStripButton();
             this.tpMarkDown = new System.Windows.Forms.TabPage();
             this.webTargetText = new System.Windows.Forms.WebBrowser();
             this.tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.tbPage = new System.Windows.Forms.ToolStripTextBox();
+            this.pbRun = new System.Windows.Forms.ToolStripProgressBar();
+            this.btnSourceSelectTextToLower = new System.Windows.Forms.ToolStripButton();
+            this.btnSourceSelectTextCommentOut = new System.Windows.Forms.ToolStripButton();
+            this.btnTargetSelectTextToBold = new System.Windows.Forms.ToolStripButton();
+            this.btnTargetSelectTextToItalic = new System.Windows.Forms.ToolStripButton();
             this.btnZoomOriginalSize = new System.Windows.Forms.ToolStripButton();
             this.btnZoomToFit = new System.Windows.Forms.ToolStripButton();
             this.btnZoomToWidth = new System.Windows.Forms.ToolStripButton();
             this.btnZoomToHeight = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnViewRuler = new System.Windows.Forms.ToolStripButton();
             this.btnViewAutoScroll = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnTranslatePageToText = new System.Windows.Forms.ToolStripButton();
             this.btnTranslatePage = new System.Windows.Forms.ToolStripButton();
             this.btnTranslateDocument = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.tbPage = new System.Windows.Forms.ToolStripTextBox();
-            this.pbRun = new System.Windows.Forms.ToolStripProgressBar();
-            this.btnViewRuler = new System.Windows.Forms.ToolStripButton();
+            this.btnFileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnViewZoomToFit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFitWidth = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnFitHeight = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRuler = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPageToText = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnToolTranslatePage = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnToolsTranlateDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSourceSplitText = new System.Windows.Forms.ToolStripButton();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -119,25 +120,6 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
-            // btnFileOpen
-            // 
-            this.btnFileOpen.Image = global::PdfiumTranslator.Properties.Resources.OpenFolder_16x;
-            this.btnFileOpen.Name = "btnFileOpen";
-            this.btnFileOpen.ShortcutKeyDisplayString = "";
-            this.btnFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.btnFileOpen.Size = new System.Drawing.Size(140, 22);
-            this.btnFileOpen.Text = "&Open";
-            this.btnFileOpen.Click += new System.EventHandler(this.btnFileOpen_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::PdfiumTranslator.Properties.Resources.Save_16x;
-            this.btnSave.Name = "btnSave";
-            this.btnSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.btnSave.Size = new System.Drawing.Size(140, 22);
-            this.btnSave.Text = "&Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -165,58 +147,10 @@
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.viewToolStripMenuItem.Text = "&View";
             // 
-            // btnViewZoomToFit
-            // 
-            this.btnViewZoomToFit.Image = global::PdfiumTranslator.Properties.Resources.ZoomToFit_16x;
-            this.btnViewZoomToFit.Name = "btnViewZoomToFit";
-            this.btnViewZoomToFit.ShortcutKeyDisplayString = "";
-            this.btnViewZoomToFit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.btnViewZoomToFit.Size = new System.Drawing.Size(184, 22);
-            this.btnViewZoomToFit.Text = "Fit &page";
-            this.btnViewZoomToFit.Click += new System.EventHandler(this.btnViewZoomToFit_Click);
-            // 
-            // btnFitWidth
-            // 
-            this.btnFitWidth.Image = global::PdfiumTranslator.Properties.Resources.ZoomToWidth_16x;
-            this.btnFitWidth.Name = "btnFitWidth";
-            this.btnFitWidth.ShortcutKeyDisplayString = "";
-            this.btnFitWidth.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.btnFitWidth.Size = new System.Drawing.Size(184, 22);
-            this.btnFitWidth.Text = "Fit &width";
-            this.btnFitWidth.Click += new System.EventHandler(this.btnFitWidth_Click);
-            // 
-            // btnFitHeight
-            // 
-            this.btnFitHeight.Image = global::PdfiumTranslator.Properties.Resources.ZoomToHeight_16x;
-            this.btnFitHeight.Name = "btnFitHeight";
-            this.btnFitHeight.ShortcutKeyDisplayString = "";
-            this.btnFitHeight.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.btnFitHeight.Size = new System.Drawing.Size(184, 22);
-            this.btnFitHeight.Text = "Fit &height";
-            this.btnFitHeight.Click += new System.EventHandler(this.btnFitHeight_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(181, 6);
-            // 
-            // btnRuler
-            // 
-            this.btnRuler.Image = global::PdfiumTranslator.Properties.Resources.Ruler_16x;
-            this.btnRuler.Name = "btnRuler";
-            this.btnRuler.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.btnRuler.Size = new System.Drawing.Size(184, 22);
-            this.btnRuler.Text = "Ruler";
-            this.btnRuler.Click += new System.EventHandler(this.btnRuler_Click);
-            // 
-            // btnAutoScroll
-            // 
-            this.btnAutoScroll.Image = global::PdfiumTranslator.Properties.Resources.Textarea_16x;
-            this.btnAutoScroll.Name = "btnAutoScroll";
-            this.btnAutoScroll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down)));
-            this.btnAutoScroll.Size = new System.Drawing.Size(184, 22);
-            this.btnAutoScroll.Text = "Auto Scroll";
-            this.btnAutoScroll.Click += new System.EventHandler(this.btnAutoScroll_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -227,35 +161,6 @@
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
-            // 
-            // btnPageToText
-            // 
-            this.btnPageToText.Image = global::PdfiumTranslator.Properties.Resources.AppearanceEditorPart_16x;
-            this.btnPageToText.Name = "btnPageToText";
-            this.btnPageToText.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.btnPageToText.Size = new System.Drawing.Size(211, 22);
-            this.btnPageToText.Text = "&Page to text";
-            this.btnPageToText.Click += new System.EventHandler(this.btnPageToText_Click);
-            // 
-            // btnToolTranslatePage
-            // 
-            this.btnToolTranslatePage.Image = global::PdfiumTranslator.Properties.Resources.TranslateDocument_16x;
-            this.btnToolTranslatePage.Name = "btnToolTranslatePage";
-            this.btnToolTranslatePage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.btnToolTranslatePage.Size = new System.Drawing.Size(211, 22);
-            this.btnToolTranslatePage.Text = "&Translate";
-            this.btnToolTranslatePage.Click += new System.EventHandler(this.btnToolTranslatePage_Click);
-            // 
-            // btnToolsTranlateDocument
-            // 
-            this.btnToolsTranlateDocument.Image = global::PdfiumTranslator.Properties.Resources.SetProactiveCaching_16x;
-            this.btnToolsTranlateDocument.Name = "btnToolsTranlateDocument";
-            this.btnToolsTranlateDocument.ShortcutKeyDisplayString = "";
-            this.btnToolsTranlateDocument.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.T)));
-            this.btnToolsTranlateDocument.Size = new System.Drawing.Size(211, 22);
-            this.btnToolsTranlateDocument.Text = "&Auto translate";
-            this.btnToolsTranlateDocument.Click += new System.EventHandler(this.btnToolsTranlateDocument_Click);
             // 
             // splitContainer1
             // 
@@ -324,6 +229,7 @@
             // tsSourceText
             // 
             this.tsSourceText.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSourceSplitText,
             this.btnSourceSelectTextToLower,
             this.btnSourceSelectTextCommentOut});
             this.tsSourceText.Location = new System.Drawing.Point(0, 0);
@@ -331,27 +237,6 @@
             this.tsSourceText.Size = new System.Drawing.Size(394, 25);
             this.tsSourceText.TabIndex = 1;
             this.tsSourceText.Text = "toolStrip1";
-            // 
-            // btnSourceSelectTextToLower
-            // 
-            this.btnSourceSelectTextToLower.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSourceSelectTextToLower.Image = global::PdfiumTranslator.Properties.Resources.HiddenTextField_16x;
-            this.btnSourceSelectTextToLower.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSourceSelectTextToLower.Name = "btnSourceSelectTextToLower";
-            this.btnSourceSelectTextToLower.Size = new System.Drawing.Size(23, 22);
-            this.btnSourceSelectTextToLower.Text = "To lower selected text";
-            this.btnSourceSelectTextToLower.ToolTipText = "To lower selected text";
-            this.btnSourceSelectTextToLower.Click += new System.EventHandler(this.btnSourceSelectTextToLower_Click);
-            // 
-            // btnSourceSelectTextCommentOut
-            // 
-            this.btnSourceSelectTextCommentOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSourceSelectTextCommentOut.Image = global::PdfiumTranslator.Properties.Resources.XMLIntelliSenseDescendant_16x;
-            this.btnSourceSelectTextCommentOut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSourceSelectTextCommentOut.Name = "btnSourceSelectTextCommentOut";
-            this.btnSourceSelectTextCommentOut.Size = new System.Drawing.Size(23, 22);
-            this.btnSourceSelectTextCommentOut.Text = "Comment out";
-            this.btnSourceSelectTextCommentOut.Click += new System.EventHandler(this.btnSourceSelectTextCommentOut_Click);
             // 
             // tabTargetText
             // 
@@ -401,26 +286,6 @@
             this.tsTargetText.Size = new System.Drawing.Size(380, 25);
             this.tsTargetText.TabIndex = 1;
             this.tsTargetText.Text = "toolStrip1";
-            // 
-            // btnTargetSelectTextToBold
-            // 
-            this.btnTargetSelectTextToBold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnTargetSelectTextToBold.Image = global::PdfiumTranslator.Properties.Resources.Bold_16x;
-            this.btnTargetSelectTextToBold.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnTargetSelectTextToBold.Name = "btnTargetSelectTextToBold";
-            this.btnTargetSelectTextToBold.Size = new System.Drawing.Size(23, 22);
-            this.btnTargetSelectTextToBold.Text = "To bold selected text";
-            this.btnTargetSelectTextToBold.Click += new System.EventHandler(this.btnTargetSelectTextToBold_Click);
-            // 
-            // btnTargetSelectTextToItalic
-            // 
-            this.btnTargetSelectTextToItalic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnTargetSelectTextToItalic.Image = global::PdfiumTranslator.Properties.Resources.Italic_16x;
-            this.btnTargetSelectTextToItalic.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnTargetSelectTextToItalic.Name = "btnTargetSelectTextToItalic";
-            this.btnTargetSelectTextToItalic.Size = new System.Drawing.Size(23, 22);
-            this.btnTargetSelectTextToItalic.Text = "To italic selected text";
-            this.btnTargetSelectTextToItalic.Click += new System.EventHandler(this.btnTargetSelectTextToItalic_Click);
             // 
             // tpMarkDown
             // 
@@ -472,6 +337,84 @@
             this.toolStrip.TabIndex = 2;
             this.toolStrip.Text = "toolStrip1";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbPage,
+            this.pbRun});
+            this.statusStrip.Location = new System.Drawing.Point(0, 551);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(792, 22);
+            this.statusStrip.TabIndex = 3;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // tbPage
+            // 
+            this.tbPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPage.Name = "tbPage";
+            this.tbPage.Size = new System.Drawing.Size(64, 22);
+            this.tbPage.Text = "1 of 1";
+            this.tbPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPage_KeyDown);
+            // 
+            // pbRun
+            // 
+            this.pbRun.Name = "pbRun";
+            this.pbRun.Size = new System.Drawing.Size(64, 16);
+            this.pbRun.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pbRun.Visible = false;
+            // 
+            // btnSourceSelectTextToLower
+            // 
+            this.btnSourceSelectTextToLower.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSourceSelectTextToLower.Image = global::PdfiumTranslator.Properties.Resources.HiddenTextField_16x;
+            this.btnSourceSelectTextToLower.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSourceSelectTextToLower.Name = "btnSourceSelectTextToLower";
+            this.btnSourceSelectTextToLower.Size = new System.Drawing.Size(23, 22);
+            this.btnSourceSelectTextToLower.Text = "To lower selected text";
+            this.btnSourceSelectTextToLower.ToolTipText = "To lower selected text";
+            this.btnSourceSelectTextToLower.Click += new System.EventHandler(this.btnSourceSelectTextToLower_Click);
+            // 
+            // btnSourceSelectTextCommentOut
+            // 
+            this.btnSourceSelectTextCommentOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSourceSelectTextCommentOut.Image = global::PdfiumTranslator.Properties.Resources.XMLIntelliSenseDescendant_16x;
+            this.btnSourceSelectTextCommentOut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSourceSelectTextCommentOut.Name = "btnSourceSelectTextCommentOut";
+            this.btnSourceSelectTextCommentOut.Size = new System.Drawing.Size(23, 22);
+            this.btnSourceSelectTextCommentOut.Text = "Comment out";
+            this.btnSourceSelectTextCommentOut.Click += new System.EventHandler(this.btnSourceSelectTextCommentOut_Click);
+            // 
+            // btnTargetSelectTextToBold
+            // 
+            this.btnTargetSelectTextToBold.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnTargetSelectTextToBold.Image = global::PdfiumTranslator.Properties.Resources.Bold_16x;
+            this.btnTargetSelectTextToBold.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTargetSelectTextToBold.Name = "btnTargetSelectTextToBold";
+            this.btnTargetSelectTextToBold.Size = new System.Drawing.Size(23, 22);
+            this.btnTargetSelectTextToBold.Text = "To bold selected text";
+            this.btnTargetSelectTextToBold.Click += new System.EventHandler(this.btnTargetSelectTextToBold_Click);
+            // 
+            // btnTargetSelectTextToItalic
+            // 
+            this.btnTargetSelectTextToItalic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnTargetSelectTextToItalic.Image = global::PdfiumTranslator.Properties.Resources.Italic_16x;
+            this.btnTargetSelectTextToItalic.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTargetSelectTextToItalic.Name = "btnTargetSelectTextToItalic";
+            this.btnTargetSelectTextToItalic.Size = new System.Drawing.Size(23, 22);
+            this.btnTargetSelectTextToItalic.Text = "To italic selected text";
+            this.btnTargetSelectTextToItalic.Click += new System.EventHandler(this.btnTargetSelectTextToItalic_Click);
+            // 
             // btnZoomOriginalSize
             // 
             this.btnZoomOriginalSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -512,10 +455,15 @@
             this.btnZoomToHeight.Text = "Fit height";
             this.btnZoomToHeight.Click += new System.EventHandler(this.btnZoomToHeight_Click);
             // 
-            // toolStripSeparator4
+            // btnViewRuler
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.btnViewRuler.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnViewRuler.Image = global::PdfiumTranslator.Properties.Resources.Ruler_16x;
+            this.btnViewRuler.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnViewRuler.Name = "btnViewRuler";
+            this.btnViewRuler.Size = new System.Drawing.Size(23, 22);
+            this.btnViewRuler.Text = "Ruler";
+            this.btnViewRuler.Click += new System.EventHandler(this.btnViewRuler_Click);
             // 
             // btnViewAutoScroll
             // 
@@ -526,11 +474,6 @@
             this.btnViewAutoScroll.Size = new System.Drawing.Size(23, 22);
             this.btnViewAutoScroll.Text = "Auto scroll";
             this.btnViewAutoScroll.Click += new System.EventHandler(this.btnViewAutoScroll_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // btnTranslatePageToText
             // 
@@ -563,42 +506,111 @@
             this.btnTranslateDocument.ToolTipText = "Auto translate document";
             this.btnTranslateDocument.Click += new System.EventHandler(this.btnTranslateDocument_Click);
             // 
-            // statusStrip
+            // btnFileOpen
             // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbPage,
-            this.pbRun});
-            this.statusStrip.Location = new System.Drawing.Point(0, 551);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(792, 22);
-            this.statusStrip.TabIndex = 3;
-            this.statusStrip.Text = "statusStrip1";
+            this.btnFileOpen.Image = global::PdfiumTranslator.Properties.Resources.OpenFolder_16x;
+            this.btnFileOpen.Name = "btnFileOpen";
+            this.btnFileOpen.ShortcutKeyDisplayString = "";
+            this.btnFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.btnFileOpen.Size = new System.Drawing.Size(140, 22);
+            this.btnFileOpen.Text = "&Open";
+            this.btnFileOpen.Click += new System.EventHandler(this.btnFileOpen_Click);
             // 
-            // tbPage
+            // btnSave
             // 
-            this.tbPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPage.Name = "tbPage";
-            this.tbPage.Size = new System.Drawing.Size(64, 22);
-            this.tbPage.Text = "1 of 1";
-            this.tbPage.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPage_KeyDown);
+            this.btnSave.Image = global::PdfiumTranslator.Properties.Resources.Save_16x;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.btnSave.Size = new System.Drawing.Size(140, 22);
+            this.btnSave.Text = "&Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // pbRun
+            // btnViewZoomToFit
             // 
-            this.pbRun.Name = "pbRun";
-            this.pbRun.Size = new System.Drawing.Size(64, 16);
-            this.pbRun.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.pbRun.Visible = false;
+            this.btnViewZoomToFit.Image = global::PdfiumTranslator.Properties.Resources.ZoomToFit_16x;
+            this.btnViewZoomToFit.Name = "btnViewZoomToFit";
+            this.btnViewZoomToFit.ShortcutKeyDisplayString = "";
+            this.btnViewZoomToFit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.btnViewZoomToFit.Size = new System.Drawing.Size(184, 22);
+            this.btnViewZoomToFit.Text = "Fit &page";
+            this.btnViewZoomToFit.Click += new System.EventHandler(this.btnViewZoomToFit_Click);
             // 
-            // btnViewRuler
+            // btnFitWidth
             // 
-            this.btnViewRuler.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnViewRuler.Image = global::PdfiumTranslator.Properties.Resources.Ruler_16x;
-            this.btnViewRuler.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnViewRuler.Name = "btnViewRuler";
-            this.btnViewRuler.Size = new System.Drawing.Size(23, 22);
-            this.btnViewRuler.Text = "Ruler";
-            this.btnViewRuler.Click += new System.EventHandler(this.btnViewRuler_Click);
+            this.btnFitWidth.Image = global::PdfiumTranslator.Properties.Resources.ZoomToWidth_16x;
+            this.btnFitWidth.Name = "btnFitWidth";
+            this.btnFitWidth.ShortcutKeyDisplayString = "";
+            this.btnFitWidth.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.btnFitWidth.Size = new System.Drawing.Size(184, 22);
+            this.btnFitWidth.Text = "Fit &width";
+            this.btnFitWidth.Click += new System.EventHandler(this.btnFitWidth_Click);
+            // 
+            // btnFitHeight
+            // 
+            this.btnFitHeight.Image = global::PdfiumTranslator.Properties.Resources.ZoomToHeight_16x;
+            this.btnFitHeight.Name = "btnFitHeight";
+            this.btnFitHeight.ShortcutKeyDisplayString = "";
+            this.btnFitHeight.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.btnFitHeight.Size = new System.Drawing.Size(184, 22);
+            this.btnFitHeight.Text = "Fit &height";
+            this.btnFitHeight.Click += new System.EventHandler(this.btnFitHeight_Click);
+            // 
+            // btnRuler
+            // 
+            this.btnRuler.Image = global::PdfiumTranslator.Properties.Resources.Ruler_16x;
+            this.btnRuler.Name = "btnRuler";
+            this.btnRuler.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.btnRuler.Size = new System.Drawing.Size(184, 22);
+            this.btnRuler.Text = "Ruler";
+            this.btnRuler.Click += new System.EventHandler(this.btnRuler_Click);
+            // 
+            // btnAutoScroll
+            // 
+            this.btnAutoScroll.Image = global::PdfiumTranslator.Properties.Resources.Textarea_16x;
+            this.btnAutoScroll.Name = "btnAutoScroll";
+            this.btnAutoScroll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Down)));
+            this.btnAutoScroll.Size = new System.Drawing.Size(184, 22);
+            this.btnAutoScroll.Text = "Auto Scroll";
+            this.btnAutoScroll.Click += new System.EventHandler(this.btnAutoScroll_Click);
+            // 
+            // btnPageToText
+            // 
+            this.btnPageToText.Image = global::PdfiumTranslator.Properties.Resources.AppearanceEditorPart_16x;
+            this.btnPageToText.Name = "btnPageToText";
+            this.btnPageToText.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.btnPageToText.Size = new System.Drawing.Size(211, 22);
+            this.btnPageToText.Text = "&Page to text";
+            this.btnPageToText.Click += new System.EventHandler(this.btnPageToText_Click);
+            // 
+            // btnToolTranslatePage
+            // 
+            this.btnToolTranslatePage.Image = global::PdfiumTranslator.Properties.Resources.TranslateDocument_16x;
+            this.btnToolTranslatePage.Name = "btnToolTranslatePage";
+            this.btnToolTranslatePage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.btnToolTranslatePage.Size = new System.Drawing.Size(211, 22);
+            this.btnToolTranslatePage.Text = "&Translate";
+            this.btnToolTranslatePage.Click += new System.EventHandler(this.btnToolTranslatePage_Click);
+            // 
+            // btnToolsTranlateDocument
+            // 
+            this.btnToolsTranlateDocument.Image = global::PdfiumTranslator.Properties.Resources.SetProactiveCaching_16x;
+            this.btnToolsTranlateDocument.Name = "btnToolsTranlateDocument";
+            this.btnToolsTranlateDocument.ShortcutKeyDisplayString = "";
+            this.btnToolsTranlateDocument.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.btnToolsTranlateDocument.Size = new System.Drawing.Size(211, 22);
+            this.btnToolsTranlateDocument.Text = "&Auto translate";
+            this.btnToolsTranlateDocument.Click += new System.EventHandler(this.btnToolsTranlateDocument_Click);
+            // 
+            // btnSourceSplitText
+            // 
+            this.btnSourceSplitText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSourceSplitText.Image = global::PdfiumTranslator.Properties.Resources.SplitPageItem_16x;
+            this.btnSourceSplitText.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSourceSplitText.Name = "btnSourceSplitText";
+            this.btnSourceSplitText.Size = new System.Drawing.Size(23, 22);
+            this.btnSourceSplitText.Text = "Auti strip text";
+            this.btnSourceSplitText.Click += new System.EventHandler(this.btnSourceSplitText_Click);
             // 
             // Main
             // 
@@ -691,6 +703,7 @@
         private System.Windows.Forms.ToolStripButton btnViewAutoScroll;
         private System.Windows.Forms.ToolStripMenuItem btnRuler;
         private System.Windows.Forms.ToolStripButton btnViewRuler;
+        private System.Windows.Forms.ToolStripButton btnSourceSplitText;
     }
 }
 

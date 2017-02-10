@@ -124,6 +124,7 @@
     <None Include="Resources\XMLIntelliSenseDescendant_16x.png" />
     <None Include="Resources\Textarea_16x.png" />
     <None Include="Resources\Ruler_16x.png" />
+    <None Include="Resources\SplitPageItem_16x.png" />
     <Content Include="x64\pdfium.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

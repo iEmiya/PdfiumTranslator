@@ -374,6 +374,7 @@ namespace PdfiumTranslator
 
         private void OnChangePdfuimDocument()
         {
+            btnSourceSplitText.Checked = _document?.AutoSplitText ?? false;
             btnToolsTranlateDocument.Checked = btnTranslateDocument.Checked = _document?.TranslateCurrentPage ?? false;
             btnViewZoomToFit.Checked = btnZoomToFit.Checked = _document?.HasZoomToFit ?? false;
             btnFitWidth.Checked = btnZoomToWidth.Checked = _document?.HasZoomToWidth ?? false;
@@ -471,6 +472,11 @@ namespace PdfiumTranslator
             OnChangePdfuimDocument();
         }
 
+        private void btnSourceSplitText_Click(object sender, EventArgs e)
+        {
+            OnSourceSplitText();
+        }
+
         private void btnSourceSelectTextToLower_Click(object sender, EventArgs e)
         {
             OnSourceSelectTextToLower();
@@ -500,6 +506,12 @@ namespace PdfiumTranslator
             {
                 UpdateSourceText(text.ToString());
             }
+        }
+
+        private void OnSourceSplitText()
+        {
+            _document?.OnSourceSplitText();
+            OnChangePdfuimDocument();
         }
 
         private void OnSourceSelectTextToLower()

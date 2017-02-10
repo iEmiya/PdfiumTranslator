@@ -28,6 +28,7 @@ namespace PdfiumTranslator
             _document = document;
             _fileName = Path.ChangeExtension(fileName, ".xml");
             _pages = PdfiumBook.Load(_fileName);
+            AutoSplitText = true;
             HasSave = true;
 
             _queue = new ConcurrentQueue<int>();
@@ -40,17 +41,23 @@ namespace PdfiumTranslator
             PdfiumPageTranslateEnd = null;
         }
 
+        public bool AutoSplitText { get; set; }
         public bool TranslateCurrentPage { get; set; }
         public bool HasZoomToFit { get; private set; }
         public bool HasZoomToWidth { get; private set; }
         public bool HasZoomToHeight { get; private set; }
         public bool HasSave { get; private set; }
 
+        public void OnSourceSplitText()
+        {
+            AutoSplitText = !AutoSplitText;
+        }
+
         public void OnPageToText(int page)
         {
             var p = CreateOrGetPage(page);
 
-            p.SourceText = _document.GetPDFText(page);
+            p.SourceText = GetSourceText(page);
             HasSave = false;
 
             PdfiumPageEvent?.Invoke(p);
@@ -103,14 +110,24 @@ namespace PdfiumTranslator
             {
                 var p = new PdfiumPage();
                 p.No = page;
-                p.SourceText = _document.GetPDFText(page);
+                p.SourceText = GetSourceText(page);
                 _pages[page] = p;
 
                 HasSave = false;
             }
             return _pages[page];
         }
-        
+
+        private string GetSourceText(int page)
+        {
+            var text = _document.GetPDFText(page);
+            if (AutoSplitText)
+            {
+                text = string.Join("\r\n", SplitText(text));
+            }
+            return text;
+        }
+
         public event PdfiumPageTranslate PdfiumPageTranslateBegin;
         public event PdfiumPageTranslate PdfiumPageTranslateEnd;
 
@@ -151,11 +168,11 @@ namespace PdfiumTranslator
             if (string.IsNullOrEmpty(p.SourceText))
             {
                 p.Translated = true;
-                p.TargetText = p.SourceText;
+                p.TargetText = null;
                 return;
             }
 
-            var sourceCollection = SplitePageText(p);
+            var sourceCollection = SplitText(p.SourceText);
             var t = new GoogleTranslate();
             var targetBuilder = new StringBuilder();
 
@@ -205,11 +222,11 @@ namespace PdfiumTranslator
             p.Translated = true;
         }
 
-        private static readonly string[] matchSplite = {"\r\n", "\n"};
+        private static readonly string[] matchSplite = { "\r\n", "\n" };
 
-        private static string[] SplitePageText(PdfiumPage p)
+        private static string[] SplitText(string text)
         {
-            var lines = p.SourceText.Split(matchSplite, StringSplitOptions.None);
+            var lines = text.Split(matchSplite, StringSplitOptions.None);
             var sourceCollection = new List<string>(lines);
 
             int i = -1;
