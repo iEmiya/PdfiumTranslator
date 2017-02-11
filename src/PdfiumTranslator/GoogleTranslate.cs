@@ -285,7 +285,7 @@ namespace PdfiumTranslator
                 _replaceCharsAfterTranslate = new Dictionary<string, string>()
                 {
                     {@"\u003cp0c\u003e", "%"},
-                    {@"\u003cc0e\u003e", "&"},
+                    {@"\u003cc0e\u003e", "&"}, {@"\u003cC0e\u003e", "&" },
                     {@"\u003cp0v\u003e", ";"},
                     {@"\u003csb0l\u003e", "["}, {@"\u003cSb0l\u003e", "[" }, 
                     {@"\u003csb0r\u003e", "]"}, {@"\u003cSb0r\u003e", "]" },

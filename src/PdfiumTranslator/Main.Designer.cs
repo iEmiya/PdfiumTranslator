@@ -55,8 +55,10 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.tbPage = new System.Windows.Forms.ToolStripTextBox();
             this.pbRun = new System.Windows.Forms.ToolStripProgressBar();
+            this.btnSourceSplitText = new System.Windows.Forms.ToolStripButton();
             this.btnSourceSelectTextToLower = new System.Windows.Forms.ToolStripButton();
             this.btnSourceSelectTextCommentOut = new System.Windows.Forms.ToolStripButton();
+            this.btnSourceOnlyAscii = new System.Windows.Forms.ToolStripButton();
             this.btnTargetSelectTextToBold = new System.Windows.Forms.ToolStripButton();
             this.btnTargetSelectTextToItalic = new System.Windows.Forms.ToolStripButton();
             this.btnZoomOriginalSize = new System.Windows.Forms.ToolStripButton();
@@ -78,7 +80,6 @@
             this.btnPageToText = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToolTranslatePage = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToolsTranlateDocument = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSourceSplitText = new System.Windows.Forms.ToolStripButton();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -230,6 +231,7 @@
             // 
             this.tsSourceText.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSourceSplitText,
+            this.btnSourceOnlyAscii,
             this.btnSourceSelectTextToLower,
             this.btnSourceSelectTextCommentOut});
             this.tsSourceText.Location = new System.Drawing.Point(0, 0);
@@ -374,6 +376,16 @@
             this.pbRun.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbRun.Visible = false;
             // 
+            // btnSourceSplitText
+            // 
+            this.btnSourceSplitText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSourceSplitText.Image = global::PdfiumTranslator.Properties.Resources.SplitPageItem_16x;
+            this.btnSourceSplitText.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSourceSplitText.Name = "btnSourceSplitText";
+            this.btnSourceSplitText.Size = new System.Drawing.Size(23, 22);
+            this.btnSourceSplitText.Text = "Auti strip text";
+            this.btnSourceSplitText.Click += new System.EventHandler(this.btnSourceSplitText_Click);
+            // 
             // btnSourceSelectTextToLower
             // 
             this.btnSourceSelectTextToLower.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -394,6 +406,16 @@
             this.btnSourceSelectTextCommentOut.Size = new System.Drawing.Size(23, 22);
             this.btnSourceSelectTextCommentOut.Text = "Comment out";
             this.btnSourceSelectTextCommentOut.Click += new System.EventHandler(this.btnSourceSelectTextCommentOut_Click);
+            // 
+            // btnSourceOnlyAscii
+            // 
+            this.btnSourceOnlyAscii.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSourceOnlyAscii.Image = global::PdfiumTranslator.Properties.Resources.InkCanvasControl_16x;
+            this.btnSourceOnlyAscii.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSourceOnlyAscii.Name = "btnSourceOnlyAscii";
+            this.btnSourceOnlyAscii.Size = new System.Drawing.Size(23, 22);
+            this.btnSourceOnlyAscii.Text = "Only ASCII";
+            this.btnSourceOnlyAscii.Click += new System.EventHandler(this.btnSourceOnlyAscii_Click);
             // 
             // btnTargetSelectTextToBold
             // 
@@ -602,16 +624,6 @@
             this.btnToolsTranlateDocument.Text = "&Auto translate";
             this.btnToolsTranlateDocument.Click += new System.EventHandler(this.btnToolsTranlateDocument_Click);
             // 
-            // btnSourceSplitText
-            // 
-            this.btnSourceSplitText.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSourceSplitText.Image = global::PdfiumTranslator.Properties.Resources.SplitPageItem_16x;
-            this.btnSourceSplitText.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSourceSplitText.Name = "btnSourceSplitText";
-            this.btnSourceSplitText.Size = new System.Drawing.Size(23, 22);
-            this.btnSourceSplitText.Text = "Auti strip text";
-            this.btnSourceSplitText.Click += new System.EventHandler(this.btnSourceSplitText_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,6 +716,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnRuler;
         private System.Windows.Forms.ToolStripButton btnViewRuler;
         private System.Windows.Forms.ToolStripButton btnSourceSplitText;
+        private System.Windows.Forms.ToolStripButton btnSourceOnlyAscii;
     }
 }
 

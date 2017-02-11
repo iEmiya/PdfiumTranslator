@@ -375,6 +375,7 @@ namespace PdfiumTranslator
         private void OnChangePdfuimDocument()
         {
             btnSourceSplitText.Checked = _document?.AutoSplitText ?? false;
+            btnSourceOnlyAscii.Checked = _document?.OnlyAscii ?? false;
             btnToolsTranlateDocument.Checked = btnTranslateDocument.Checked = _document?.TranslateCurrentPage ?? false;
             btnViewZoomToFit.Checked = btnZoomToFit.Checked = _document?.HasZoomToFit ?? false;
             btnFitWidth.Checked = btnZoomToWidth.Checked = _document?.HasZoomToWidth ?? false;
@@ -477,6 +478,11 @@ namespace PdfiumTranslator
             OnSourceSplitText();
         }
 
+        private void btnSourceOnlyAscii_Click(object sender, EventArgs e)
+        {
+            OnSourceOnlyAscii();
+        }
+
         private void btnSourceSelectTextToLower_Click(object sender, EventArgs e)
         {
             OnSourceSelectTextToLower();
@@ -514,6 +520,12 @@ namespace PdfiumTranslator
             OnChangePdfuimDocument();
         }
 
+        private void OnSourceOnlyAscii()
+        {
+            _document?.OnSourceOnlyAscii();
+            OnChangePdfuimDocument();
+        }
+
         private void OnSourceSelectTextToLower()
         {
             var control = tbSourceText;
@@ -524,8 +536,11 @@ namespace PdfiumTranslator
 
             var text = new StringBuilder(control.Text);
             var t = text.ToString(selectionStart, selectionLength);
+
+            var isUpper = char.IsUpper(t[0]);
             text.Remove(selectionStart, selectionLength);
             text.Insert(selectionStart, t.ToLower());
+            if (isUpper) text[0] = char.ToUpper(text[0]);
 
             using (control.WatchSelection())
             {

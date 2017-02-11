@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PdfiumViewer;
@@ -29,6 +30,7 @@ namespace PdfiumTranslator
             _fileName = Path.ChangeExtension(fileName, ".xml");
             _pages = PdfiumBook.Load(_fileName);
             AutoSplitText = true;
+            OnlyAscii = true;
             HasSave = true;
 
             _queue = new ConcurrentQueue<int>();
@@ -42,6 +44,7 @@ namespace PdfiumTranslator
         }
 
         public bool AutoSplitText { get; set; }
+        public bool OnlyAscii { get; set; }
         public bool TranslateCurrentPage { get; set; }
         public bool HasZoomToFit { get; private set; }
         public bool HasZoomToWidth { get; private set; }
@@ -53,11 +56,16 @@ namespace PdfiumTranslator
             AutoSplitText = !AutoSplitText;
         }
 
+        public void OnSourceOnlyAscii()
+        {
+            OnlyAscii = !OnlyAscii;
+        }
+
         public void OnPageToText(int page)
         {
             var p = CreateOrGetPage(page);
 
-            p.SourceText = GetSourceText(page);
+            p.SourceText = GetPDFText(page);
             HasSave = false;
 
             PdfiumPageEvent?.Invoke(p);
@@ -110,7 +118,12 @@ namespace PdfiumTranslator
             {
                 var p = new PdfiumPage();
                 p.No = page;
-                p.SourceText = GetSourceText(page);
+                var text = GetPDFText(page);
+                if (OnlyAscii)
+                {
+                    text = Regex.Replace(text, @"[^\u0000-\u007F]", "");
+                }
+                p.SourceText = text;
                 _pages[page] = p;
 
                 HasSave = false;
@@ -118,7 +131,7 @@ namespace PdfiumTranslator
             return _pages[page];
         }
 
-        private string GetSourceText(int page)
+        private string GetPDFText(int page)
         {
             var text = _document.GetPDFText(page);
             if (AutoSplitText)
